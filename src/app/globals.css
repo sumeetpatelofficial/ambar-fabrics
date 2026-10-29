@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * Design tokens. Names follow shadcn/ui's semantic variables so generated components pick them up.
+ * Brand colours (ivory, charcoal, sage, terracotta, antique gold) are first-class tokens.
+ * Final values are tuned in Phase 2 with a contrast check; changing a token here restyles the app.
+ * No dark theme in v1: `dark:` utilities only react to a `.dark` class, which is never set.
+ */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* The shop's theme: warm ground, ink green, amber accents. */
+  --background: #f5efe4; /* ground */
+  --foreground: #1c2b27; /* ink */
+  --card: #fbf8f2; /* paper */
+  --card-foreground: #1c2b27;
+  --popover: #fbf8f2;
+  --popover-foreground: #1c2b27;
+  --primary: #1c2b27;
+  --primary-foreground: #f5efe4;
+  --secondary: #efe6d6; /* sand */
+  --secondary-foreground: #1c2b27;
+  --muted: #efe6d6;
+  --muted-foreground: #4a4e48;
+  --accent: #e7dcc7;
+  --accent-foreground: #1c2b27;
+  --destructive: #b3261e;
+  --border: #d9d1c1; /* hairlines */
+  --input: #7d786d; /* form control edges: >= 3:1 against the ground (WCAG 1.4.11) */
+  --ring: #1c2b27;
+
+  /* Accents. Small text and labels use --highlight (5.2:1 on the ground, 4.7:1 on sand). Saffron is for fills and
+     lines only, never text. --offer carries ivory text (about 8:1) for tags and the offer band. */
+  --highlight: #8f5804;
+  --saffron: #b8760a;
+  --gold-dark: #e0b04e; /* gold on dark backgrounds */
+  --offer: #7e4c04;
+  --offer-foreground: #fbf3e4;
+  /* Tints for the outfit arches and section backgrounds: [arch, background]. */
+  --tint-red: #e8c9b5;
+  --tint-red-bg: #f3e6dc;
+  --tint-indigo: #cbd0df;
+  --tint-indigo-bg: #e9ebf1;
+  --tint-sage: #d4dccb;
+  --tint-sage-bg: #ecefe6;
+  --tint-gold: #e6d6ae;
+  --tint-gold-bg: #f3ebd6;
+
+  --madder: #9a4431; /* warnings and the filled wishlist heart */
+  --brass: #876823; /* ratings */
+
+  --radius: 0.25rem;
+  --button-radius: 999px;
+  --button-radius-sm: 999px;
+
+  --face-body: var(--font-hanken), system-ui, sans-serif;
+  --face-display: var(--font-instrument), Georgia, "Times New Roman", serif;
+}
+
+/*
+ * The staff area keeps its own look: the old colours, corners and display face. It is matched with :has so
+ * that pop-ups the admin draws into <body> (menus, dialogs, messages) take the same values.
+ */
+:root:has(.admin-root) {
+  --background: #fbf9f4;
+  --foreground: #23211d;
+  --card: #fefdfa;
+  --card-foreground: #23211d;
+  --popover: #fefdfa;
+  --popover-foreground: #23211d;
+  --primary: #06332e;
+  --primary-foreground: #fbf9f4;
+  --secondary: #eee8da;
+  --secondary-foreground: #23211d;
+  --muted: #f3eee3;
+  --muted-foreground: #66615a;
+  --accent: #e9e2d1;
+  --accent-foreground: #23211d;
+  --border: #e2dccd;
+  --input: #8c8578;
+  --ring: #06332e;
+  --button-radius: 0.375rem;
+  --button-radius-sm: 0.25rem;
+  --face-display: var(--font-gilda), "Times New Roman", serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-highlight: var(--highlight);
+  --color-saffron: var(--saffron);
+  --color-gold-dark: var(--gold-dark);
+  --color-offer: var(--offer);
+  --color-offer-foreground: var(--offer-foreground);
+  --color-tint-red: var(--tint-red);
+  --color-tint-red-bg: var(--tint-red-bg);
+  --color-tint-indigo: var(--tint-indigo);
+  --color-tint-indigo-bg: var(--tint-indigo-bg);
+  --color-tint-sage: var(--tint-sage);
+  --color-tint-sage-bg: var(--tint-sage-bg);
+  --color-tint-gold: var(--tint-gold);
+  --color-tint-gold-bg: var(--tint-gold-bg);
+  --color-madder: var(--madder);
+  --color-brass: var(--brass);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  --font-sans: var(--face-body);
+  --font-display: var(--face-display);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  /* Drop-down lists: our own arrow, set in from the edge, instead of the browser's flush-right one. */
+  select:not([multiple]) {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234a4e48' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2.25rem;
+    cursor: pointer;
+  }
+  body {
+    @apply bg-white font-sans text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-normal tracking-tight text-balance;
+  }
+  /* Instrument Serif is narrow and has one weight: tighter lines suit it in the shop. */
+  :root:not(:has(.admin-root)) :is(h1, h2, h3) {
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selvedge rule: a hairline with measuring-tape ticks. The one decorative motif, used sparingly. */
+@layer components {
+  .selvedge {
+    height: 10px;
+    color: var(--muted-foreground);
+    opacity: 0.55;
+    background-image:
+      linear-gradient(currentColor, currentColor),
+      repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 8px),
+      repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 40px);
+    background-size:
+      100% 1px,
+      100% 4px,
+      100% 9px;
+    background-position:
+      0 0,
+      0 1px,
+      0 1px;
+    background-repeat: no-repeat;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Hero swatches unroll once, in sequence. Pure CSS so it starts at first paint; the reduced-motion rule
+   above collapses it to the finished state. */
+@keyframes unroll {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.unroll {
+  transform-origin: bottom;
+  animation: unroll 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* The main menu: each item rises into place, one after another, when the panel opens. */
+@keyframes menu-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.menu-item {
+  opacity: 0;
+}
+[data-open="true"] .menu-item {
+  animation: menu-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-item,
+  [data-open="true"] .menu-item {
+    opacity: 1;
+    animation: none;
+  }
+}

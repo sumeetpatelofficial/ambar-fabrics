@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ambar — page blocks</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 2860px; box-sizing: border-box; padding: 72px 80px; background: #FBF8F2; color: #1C2B27; font-family: 'Hanken Grotesk', system-ui, sans-serif">
+
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px">
+<div>
+<div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: #9A5F05">Blueprint</div>
+<h1 class="serif" style="margin: 14px 0 0; font-size: 68px; line-height: 1">Page blocks &amp; <em>scroll choreography</em></h1>
+</div>
+<p style="margin: 0; max-width: 430px; font-size: 15px; line-height: 1.6; color: #4A4E48">Twelve blocks, top to bottom. Each one names what the shopper sees, what scrolling does, the GSAP technique behind it, and the photography you will need to swap in.</p>
+</div>
+
+<div style="margin-top: 48px">
+<div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #4A4E48">Scroll length, in screens</div>
+<div style="display: flex; height: 44px; margin-top: 12px; gap: 3px; font-size: 12px; font-weight: 600">
+<div style="flex: 1; background: #E8C9B5; display: flex; align-items: center; padding: 0 10px">02 Hero · 1</div>
+<div style="flex: 4; background: #F3E6DC; display: flex; align-items: center; padding: 0 10px; box-shadow: inset 0 -3px 0 #B8760A">03 Wardrobe · 4 (sticky)</div>
+<div style="flex: 3; background: #1C2B27; color: #F5EFE4; display: flex; align-items: center; padding: 0 10px; box-shadow: inset 0 -3px 0 #B8760A">04 Categories · ~3 (sticky)</div>
+<div style="flex: 3.5; background: #CBD0DF; display: flex; align-items: center; padding: 0 10px">05 360° · ~3.5</div>
+<div style="flex: 2; background: #D8E2DA; display: flex; align-items: center; padding: 0 10px">06 Lookbook · ~2</div>
+<div style="flex: 2.3; background: #EFE6D6; display: flex; align-items: center; padding: 0 10px; box-shadow: inset 0 -3px 0 #B8760A">07 Metre · ~2.3 (sticky)</div>
+<div style="flex: 1; background: #F5EFE4; display: flex; align-items: center; padding: 0 10px">08 · 1</div>
+<div style="flex: 1; background: #7E4C04; color: #FBF3E4; display: flex; align-items: center; padding: 0 10px">09 Offer</div>
+<div style="flex: 1; background: #FBF8F2; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.15); display: flex; align-items: center; padding: 0 10px">10 Reviews</div>
+<div style="flex: 1; background: #E6D6AE; display: flex; align-items: center; padding: 0 10px">11 CTA</div>
+<div style="flex: 0.6; background: #3B4A44; color: #F5EFE4; display: flex; align-items: center; padding: 0 10px">12</div>
+</div>
+<div style="font-size: 12px; color: #4A4E48; margin-top: 8px">Gold underline = the section holds still (CSS sticky) while scroll drives the animation. Header (01) rides on top of everything.</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; margin-top: 56px; padding-bottom: 12px; border-bottom: 1px solid #1C2B27; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: #4A4E48">
+<span>Block</span><span>What the shopper sees</span><span>Scroll behaviour · GSAP</span><span>Assets you supply</span>
+</div>
+
+<div style="display: flex; flex-direction: column">
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #EFE6D6; position: relative; overflow: hidden">
+<div style="height: 12px; background: #1C2B27"></div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 14px 0"><div style="display: flex; gap: 6px"><span style="width: 22px; height: 4px; background: #1C2B27; opacity: 0.5"></span><span style="width: 22px; height: 4px; background: #1C2B27; opacity: 0.5"></span><span style="width: 22px; height: 4px; background: #1C2B27; opacity: 0.5"></span></div><span class="serif" style="font-size: 20px">ambar</span><div style="display: flex; gap: 6px"><span style="width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #1C2B27"></span><span style="width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #1C2B27"></span><span style="width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #1C2B27"></span></div></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">01</span><h2 class="serif" style="margin: 0; font-size: 32px">Header</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">Announcement bar, then a centred wordmark with category links left and icons right. It floats transparent over the hero.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Sticky. Fades to solid ivory with a hairline over the first 140 px of scroll.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">gsap.to(header, { backgroundColor, scrollTrigger: { scrub } })</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">Logo mark as SVG</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #EFE6D6; position: relative; overflow: hidden; display: flex; gap: 14px; padding: 18px 16px 0; box-sizing: border-box">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 7px; padding-top: 18px"><span style="height: 12px; width: 90%; background: #1C2B27"></span><span style="height: 12px; width: 60%; background: #9E2F2A"></span><span style="height: 4px; width: 80%; background: #1C2B27; opacity: 0.3; margin-top: 6px"></span><span style="height: 4px; width: 70%; background: #1C2B27; opacity: 0.3"></span><span style="height: 12px; width: 44%; border-radius: 6px; background: #1C2B27; margin-top: 6px"></span></div>
+<div style="width: 84px; align-self: flex-end; height: 112px; border-radius: 42px 42px 0 0; background: #E8C9B5"></div>
+<div style="position: absolute; left: 16px; bottom: 8px; display: flex; gap: 6px"><span style="width: 26px; height: 2px; background: #1C2B27"></span><span style="width: 26px; height: 2px; background: #1C2B27; opacity: 0.25"></span><span style="width: 26px; height: 2px; background: #1C2B27; opacity: 0.25"></span></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">02</span><h2 class="serif" style="margin: 0; font-size: 32px">Hero carousel</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">Three collection slides — Festive edit, Everyday cotton, Wedding dupattas. Large serif headline, model standing in an arch, a price tag card and two calls to action.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Auto-advances every 6 s with progress lines you can click. On change, the model is revealed bottom-up and the text rises in. Scrolling away drifts the hero up and fades it.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">fromTo(clipPath: inset(100%→0)) · stagger on text · scrub yPercent</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">3 model cut-outs, transparent WebP/PNG, ~1600 px tall, same framing</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #F3E6DC; position: relative; overflow: hidden; display: flex; gap: 12px; padding: 16px 14px 0; box-sizing: border-box">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 8px; padding-top: 14px"><span style="height: 6px; width: 90%; background: #1C2B27"></span><span style="height: 6px; width: 80%; background: #1C2B27; opacity: 0.25"></span><span style="height: 6px; width: 85%; background: #1C2B27; opacity: 0.25"></span><span style="height: 6px; width: 70%; background: #1C2B27; opacity: 0.25"></span></div>
+<div style="width: 62px; height: 96px; border-radius: 31px 31px 0 0; background: linear-gradient(#CBD0DF 0 55%, #E8C9B5 55%); position: relative"><span style="position: absolute; left: -4px; right: -4px; top: 55%; height: 2px; background: #B8760A"></span></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 6px; padding-top: 14px"><span style="height: 8px; width: 80%; background: #1C2B27"></span><span style="height: 4px; width: 90%; background: #1C2B27; opacity: 0.3"></span><span style="height: 4px; width: 70%; background: #1C2B27; opacity: 0.3"></span><span style="height: 10px; width: 60%; border-radius: 5px; border: 1.5px solid #1C2B27; margin-top: 4px"></span></div>
+<div style="position: absolute; left: 14px; right: 14px; bottom: 10px; height: 2px; background: rgba(28,43,39,0.3)"><span style="display: block; width: 55%; height: 2px; background: #B8760A"></span></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">03</span><h2 class="serif" style="margin: 0; font-size: 32px">The wardrobe</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">One model, four outfits. The outfit list on the left, the model in the centre, the outfit's details, swatches, price and fabric link on the right. A measuring tape fills along the bottom.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Section holds still for ~4 screens. Each scroll step drapes the next outfit down over the model (gold scan line at the edge), the list and details swap, the background tint shifts. Snaps to each look so it never stops half-changed.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">timeline + scrollTrigger { scrub, snap: 1/(n−1) } · clipPath wipe</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">4–6 photos of the same AI model in the <strong style="color: #1C2B27">same pose and framing</strong> — only the outfit changes, so the wipe lines up</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #1C2B27; position: relative; overflow: hidden; display: flex; gap: 10px; padding: 22px 0 0 16px; box-sizing: border-box">
+<div style="width: 50px; display: flex; flex-direction: column; gap: 6px; padding-top: 8px"><span style="height: 8px; background: #E0B04E; width: 70%"></span><span style="height: 5px; background: #F5EFE4; opacity: 0.6"></span><span style="height: 5px; background: #F5EFE4; opacity: 0.6; width: 80%"></span></div>
+<div style="flex: none; width: 54px; height: 86px; background: #B9C6B0"></div>
+<div style="flex: none; width: 54px; height: 86px; background: #26335E; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3)"></div>
+<div style="flex: none; width: 54px; height: 86px; background: #EAE0C8"></div>
+<div style="flex: none; width: 54px; height: 86px; background: #B8483A"></div>
+<svg width="30" height="14" viewBox="0 0 30 14" fill="none" stroke="#E0B04E" stroke-width="2" aria-hidden="true" style="position: absolute; right: 10px; bottom: 12px"><path d="M1 7h26M21 1l6 6-6 6"></path></svg>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">04</span><h2 class="serif" style="margin: 0; font-size: 32px">Shop by category</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">A dark band with seven tall category cards: Fabrics, Ready-made, Unstitched suits, Dupattas, Blouses, Tassels &amp; latkans, Laces &amp; borders — then "All categories".</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Vertical scroll moves the rail sideways. Cards lift and straighten as they enter, the textile drifts inside each card, a gold line tracks progress.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">to(track, { x: −distance }) · containerAnimation for per-card effects</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">1 image per category, 4:5 portrait</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #EFE6D6; position: relative; overflow: hidden; display: flex; gap: 18px; padding: 16px; box-sizing: border-box">
+<div style="width: 100px; position: relative; display: flex; justify-content: center"><div style="width: 70px; height: 96px; border-radius: 35px 35px 0 0; border: 1.5px solid rgba(28,43,39,0.35); border-bottom: 0"></div><div style="position: absolute; bottom: 4px; width: 92px; height: 18px; border-radius: 50%; border: 1.5px dashed #B8760A"></div><div style="position: absolute; top: 26px; width: 22px; height: 62px; background: #22305A; border-radius: 10px 10px 2px 2px"></div></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 14px; padding-top: 4px"><span style="height: 22px; background: #1C2B27; opacity: 0.12"></span><span style="height: 22px; background: #1C2B27; opacity: 0.2"></span><span style="height: 22px; background: #1C2B27; opacity: 0.12"></span></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">05</span><h2 class="serif" style="margin: 0; font-size: 32px">Every angle — 360°</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">Model on the left, story on the right: Front, Side, Back, then Full turn with "Shop the set" and "Fabric · ₹420 per metre".</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">The page scrolls normally; the model column sticks and turns 0→360° with scroll progress, with a dial and live degree readout. Text blocks rise in as they arrive.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">Mockup: rotationY on a preserve-3d front/back card. With real photos: draw frame = round(progress × 35) of an image sequence on a &lt;canvas&gt;.</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">A turntable of the AI model: 36–72 frames (or a 360° video exported to frames), WebP, same lighting</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #FBF8F2; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.12); position: relative; overflow: hidden; display: flex; gap: 8px; padding: 0 16px; box-sizing: border-box">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 8px; margin-top: -10px"><span style="height: 70px; background: #D8E2DA"></span><span style="height: 70px; background: #CBD0DF"></span></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 8px; margin-top: 26px"><span style="height: 70px; background: #E8D8CF"></span><span style="height: 70px; background: #F0DFBA"></span></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 8px; margin-top: 4px"><span style="height: 70px; background: #EAD8C4"></span><span style="height: 70px; background: #D4DCCB"></span></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">06</span><h2 class="serif" style="margin: 0; font-size: 32px">Looks in motion</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">A Pinterest-style lookbook: three staggered columns of outfit cards, each linking to the piece or its fabric. A large italic line of craft names sits behind.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Columns move at different speeds (the middle one against the others), photos settle from a slight zoom, the craft names slide sideways.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">scrub yPercent per column · xPercent marquee · scale 1.14→1</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">9–12 lookbook shots, 3:4, varied backgrounds</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #EFE6D6; position: relative; overflow: hidden; padding: 18px 16px; box-sizing: border-box">
+<div style="display: flex; justify-content: flex-end"><span class="serif" style="font-size: 26px; line-height: 1">2.5 m</span></div>
+<div style="position: relative; margin-top: 12px; height: 42px"><div style="position: absolute; left: 0; top: 4px; height: 34px; width: 75%; background: #C98C82"></div><div style="position: absolute; left: 75%; top: 0; width: 10px; height: 42px; margin-left: -5px; border-radius: 5px; background: #8E3B33"></div></div>
+<div style="margin-top: 8px; height: 8px; border-top: 1px solid rgba(28,43,39,0.5); background-image: repeating-linear-gradient(90deg, rgba(28,43,39,0.4) 0 1px, transparent 1px 10px); background-size: 100% 5px; background-repeat: no-repeat"></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">07</span><h2 class="serif" style="margin: 0; font-size: 32px">Cut to order</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">Your "buy only the length you need" promise, shown instead of told: a fabric roll, a measuring tape, and a big length and price readout.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Holds still while the fabric unrolls off the roll along the tape; the length counts up in 0.25 m steps and the price follows (block print cotton at ₹220 per metre).</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">scrub scaleX + onUpdate → textContent</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">One long, flat fabric texture (seamless if possible)</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #F5EFE4; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.12); display: flex; gap: 8px; padding: 22px 16px; box-sizing: border-box">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 5px"><span style="height: 62px; background: #C98A86"></span><span style="height: 4px; width: 80%; background: #1C2B27"></span><span style="height: 4px; width: 50%; background: #1C2B27; opacity: 0.4"></span></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 5px"><span style="height: 62px; background: #8B95BD"></span><span style="height: 4px; width: 80%; background: #1C2B27"></span><span style="height: 4px; width: 50%; background: #1C2B27; opacity: 0.4"></span></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 5px"><span style="height: 62px; background: #C98C82"></span><span style="height: 4px; width: 80%; background: #1C2B27"></span><span style="height: 4px; width: 50%; background: #1C2B27; opacity: 0.4"></span></div>
+<div style="flex: 1; display: flex; flex-direction: column; gap: 5px"><span style="height: 62px; background: #C9AE73"></span><span style="height: 4px; width: 80%; background: #1C2B27"></span><span style="height: 4px; width: 50%; background: #1C2B27; opacity: 0.4"></span></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">08</span><h2 class="serif" style="margin: 0; font-size: 32px">New arrivals</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">Your current product cards, quieter: no card borders, a single tag, price with unit, sale price struck through, colour dots, wishlist.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Cards fade up in a stagger as the row arrives; image zooms gently on hover. Bestsellers can reuse the same block.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">ScrollTrigger.batch(cards, { onEnter → stagger })</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">Product photos, 4:5</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #7E4C04; color: #FBF3E4; position: relative; overflow: hidden; padding: 14px 16px; box-sizing: border-box">
+<div style="height: 3px; background: rgba(251,243,228,0.5); width: 120%"></div>
+<div class="serif" style="font-size: 50px; line-height: 1; margin-top: 18px">XX%</div>
+<div style="position: absolute; right: 14px; top: 34px; width: 86px; height: 74px; background: #FBF3E4; border-radius: 3px; transform: rotate(-6deg); border-right: 14px solid #F2E4C8"></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">09</span><h2 class="serif" style="margin: 0; font-size: 32px">Festive offer</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">A deep ochre band: a running offer ticker, a huge percentage, a "Shop the offer" button and a tear-off coupon with the code, a copy button and the terms.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">Ticker slides sideways with scroll, the number rises out of a mask, the coupon swings in from a tilt and settles. "Copy code" copies to the clipboard and confirms.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">scrub xPercent · yPercent mask reveal · rotation + x on ticket</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">Offer %, code, end date, minimum order</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #FBF8F2; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.12); overflow: hidden; display: flex; flex-direction: column; gap: 10px; padding: 26px 0; box-sizing: border-box">
+<div style="display: flex; gap: 8px; margin-left: 14px"><span style="flex: none; width: 84px; height: 40px; background: #E9EBF1"></span><span style="flex: none; width: 84px; height: 40px; background: #F3E6DC"></span><span style="flex: none; width: 84px; height: 40px; background: #ECEFE6"></span></div>
+<div style="display: flex; gap: 8px; margin-left: -30px"><span style="flex: none; width: 84px; height: 40px; background: #ECEFE6"></span><span style="flex: none; width: 84px; height: 40px; background: #F3EBD6"></span><span style="flex: none; width: 84px; height: 40px; background: #E9EBF1"></span></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">10</span><h2 class="serif" style="margin: 0; font-size: 32px">Customer reviews</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">Two rows of quote cards, each with the review, the customer's name and city, and the product they bought.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">The rows drift in opposite directions as you scroll past, so the wall of reviews feels alive without autoplaying.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">scrub xPercent, opposite sign per row</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">6–8 real reviews (Google, Instagram, order emails) with permission</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; border-bottom: 1px solid rgba(28,43,39,0.15); align-items: start">
+<div style="height: 140px; background: #EFE6D6; position: relative; overflow: hidden; padding: 18px 16px; box-sizing: border-box">
+<div class="serif" style="font-size: 34px; line-height: 0.95">Find your<br><em style="color: #7E4C04">fabric.</em></div>
+<div style="display: flex; gap: 6px; margin-top: 14px"><span style="width: 50px; height: 12px; border-radius: 6px; background: #1C2B27"></span><span style="width: 50px; height: 12px; border-radius: 6px; border: 1.5px solid #1C2B27"></span></div>
+<div style="position: absolute; right: 14px; top: 14px; width: 46px; height: 46px; border-radius: 50%; background: #1C2B27; box-shadow: inset 0 0 0 15px #1C2B27, inset 0 0 0 30px #B8760A"></div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">11</span><h2 class="serif" style="margin: 0; font-size: 32px">Closing call to action</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">"Find your fabric." with Shop fabrics and Chat on WhatsApp, a line offering help with metres, and an email sign-up for new arrivals and offers.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">The headline rises word by word out of a mask; a round "Cut to order · by the metre" badge turns as the section scrolls.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">from(yPercent 110, stagger) · scrub rotation on SVG textPath badge</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">WhatsApp number, email tool, year founded</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 250px minmax(0,1fr) minmax(0,1.15fr) 230px; column-gap: 36px; padding: 28px 0; align-items: start">
+<div style="height: 140px; background: #1C2B27; color: #F5EFE4; position: relative; overflow: hidden; padding: 16px; box-sizing: border-box">
+<div style="display: flex; gap: 14px"><span style="height: 4px; width: 50px; background: #F5EFE4; opacity: 0.6"></span><span style="height: 4px; width: 30px; background: #E0B04E"></span><span style="height: 4px; width: 30px; background: #E0B04E"></span><span style="height: 4px; width: 30px; background: #E0B04E"></span></div>
+<div class="serif" style="position: absolute; left: 12px; bottom: -14px; font-size: 84px; line-height: 1">ambar</div>
+</div>
+<div><div style="display: flex; gap: 12px; align-items: baseline"><span style="font-size: 13px; font-weight: 700; color: #9A5F05">12</span><h2 class="serif" style="margin: 0; font-size: 32px">Footer</h2></div><p style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">Deep green, your Shop / Help / Company links, and an oversized wordmark as the sign-off.</p></div>
+<div style="font-size: 15px; line-height: 1.6"><p style="margin: 0">The wordmark rises into place as the footer scrolls in.</p><p style="margin: 10px 0 0; font-family: ui-monospace, monospace; font-size: 12.5px; color: #4A4E48">scrub from yPercent 45</p></div>
+<div style="font-size: 14px; line-height: 1.6; color: #4A4E48">None</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

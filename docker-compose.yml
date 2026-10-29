@@ -1,0 +1,23 @@
+# Local MongoDB as a single-node replica set. Replica-set mode is required for multi-document
+# transactions (checkout, payment capture), which production Atlas also uses.
+#   pnpm db:up     start and wait until healthy
+#   pnpm db:down   stop (data kept in the named volume)
+services:
+  mongo:
+    image: mongo:8
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "127.0.0.1:27017:27017" # bound to localhost only
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: >
+        mongosh --quiet --eval
+        "try { rs.status().ok } catch (e) { rs.initiate({_id:'rs0',members:[{_id:0,host:'127.0.0.1:27017'}]}).ok }"
+      interval: 5s
+      timeout: 10s
+      retries: 12
+      start_period: 5s
+
+volumes:
+  mongo-data:

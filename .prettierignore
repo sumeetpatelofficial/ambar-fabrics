@@ -1,0 +1,8 @@
+.next
+.next-e2e
+node_modules
+coverage
+pnpm-lock.yaml
+AGENTS.md
+next-env.d.ts
+design

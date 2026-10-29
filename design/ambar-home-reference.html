@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ambar — homepage</title>
+<script src="./support.js"></script>
+<script src="/_blob/3d47696f65c77b3a8ff4d7a5dbac598b"></script>
+<script src="/_blob/ab43a6849eace14be8a03b7d02d6248f"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#F5EFE4}
+a{color:#1C2B27}a:hover{color:#9A5F05}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+.drawer{transition:transform .55s cubic-bezier(.7,0,.2,1),visibility 0s linear .55s}
+.drawer.is-open{transition:transform .55s cubic-bezier(.7,0,.2,1),visibility 0s linear 0s}
+.scrim{transition:opacity .45s ease}
+.nav-link{color:#1C2B27;text-decoration:none;transition:color .2s ease}
+.nav-link:hover{color:#9A5F05}
+.nav-plus{transition:transform .35s ease}
+.util a{color:#1C2B27;text-decoration:none}
+.util a:hover{color:#9A5F05}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;height:100%}
+.hero-art{height:100%}
+.ward-grid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:56px;align-items:center}
+.ward-stage{height:clamp(380px,calc(100vh - 320px),570px);aspect-ratio:3/5;justify-self:center}
+.turn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.look-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.prod-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot a{color:rgba(245,239,228,.8);text-decoration:none}
+.foot a:hover{color:#E0B04E}
+.tape{background-image:repeating-linear-gradient(90deg,rgba(28,43,39,.6) 0 1px,transparent 1px 100px),repeating-linear-gradient(90deg,rgba(28,43,39,.35) 0 1px,transparent 1px 10px);background-size:100% 16px,100% 7px;background-repeat:no-repeat;border-top:1px solid rgba(28,43,39,.5)}
+.prod-img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.prod:hover .prod-img{transform:scale(1.06)}
+.cat-card .cat-arrow{transition:transform .4s ease}
+.cat-card:hover .cat-arrow{transform:translateX(6px)}
+.cue{animation:cue 1.8s ease-in-out infinite;transform-origin:50% 0}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:50% 0}51%{transform-origin:50% 100%}100%{transform:scaleY(0);transform-origin:50% 100%}}
+.p-sage{background-color:#B9C6B0;background-image:radial-gradient(#8FA287 1px,transparent 1.5px);background-size:8px 8px}
+.p-red{background-color:#B8483A;background-image:radial-gradient(#F3DDBF 1.6px,transparent 2.1px);background-size:14px 14px}
+.p-indigo{background-color:#26335E;background-image:radial-gradient(#C9CCE0 2px,transparent 2.6px),linear-gradient(45deg,transparent 46%,#C9CCE0 46% 52%,transparent 52%),linear-gradient(-45deg,transparent 46%,#C9CCE0 46% 52%,transparent 52%);background-size:28px 28px;background-position:14px 14px,0 0,0 0}
+.p-indigo-l{background-color:#8B95BD;background-image:radial-gradient(#2E3A68 2px,transparent 2.6px),linear-gradient(45deg,transparent 46%,#2E3A68 46% 52%,transparent 52%),linear-gradient(-45deg,transparent 46%,#2E3A68 46% 52%,transparent 52%);background-size:28px 28px;background-position:14px 14px,0 0,0 0}
+.p-leaf{background-color:#EAE0C8;background-image:radial-gradient(3px 7px at 50% 50%,#5E7A58 96%,transparent 100%);background-size:22px 26px}
+.p-rose{background-color:#C98C82;background-image:radial-gradient(3px 7px at 50% 50%,#8E3B33 96%,transparent 100%);background-size:24px 28px}
+.p-gold{background-color:#D9BE7E;background-image:repeating-linear-gradient(90deg,#B8954B 0 2px,transparent 2px 14px,#C9A862 14px 15px,transparent 15px 22px)}
+.p-wine{background-color:#6E2E3E;background-image:radial-gradient(#E3B866 3px,transparent 3.6px),radial-gradient(#E3B866 1.2px,transparent 1.7px);background-size:30px 30px,10px 10px;background-position:0 0,5px 5px}
+.p-border{background-color:#F1E8D6;background-image:repeating-linear-gradient(0deg,#B8760A 0 3px,transparent 3px 10px,#1C2B27 10px 11px,transparent 11px 40px)}
+.p-bandhani{background-color:#C98A86;background-image:radial-gradient(#7A2B2B 1.8px,transparent 2.3px);background-size:16px 16px}
+.p-tissue{background-color:#C9AE73;background-image:linear-gradient(135deg,rgba(255,255,255,.22) 25%,transparent 25% 50%,rgba(255,255,255,.22) 50% 75%,transparent 75%);background-size:6px 6px}
+@media (max-width:900px){
+.hero-grid{grid-template-columns:1fr;gap:16px;grid-template-rows:auto minmax(0,1fr)}
+.hero-cap{display:none}
+.ward-grid{grid-template-columns:1fr;gap:20px;justify-items:center}
+.ward-list{display:none!important}
+.ward-stage{height:330px}
+.ward-info{text-align:center}
+.turn-grid{grid-template-columns:1fr;gap:0}
+.turn-sticky{height:420px!important;top:64px!important;z-index:1}
+.turn-block{position:relative;z-index:2;background:rgba(251,248,242,.94);padding:24px;min-height:360px!important;margin-bottom:24px}
+.look-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.prod-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.foot-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</helmet>
+<div data-g="root" style="font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #F5EFE4; color: #1C2B27; height: 100vh; overflow-y: auto; overflow-x: hidden; position: relative">
+
+<div style="background: #1C2B27; color: #F5EFE4; text-align: center; font-size: 12.5px; padding: 9px 16px; letter-spacing: 0.02em">Free shipping on orders above ₹[THRESHOLD] · Fabric cut to order, by the metre</div>
+
+<header data-g="header" style="position: sticky; top: 0; z-index: 50; background: rgba(245,239,228,0)">
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); height: 76px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center">
+<button type="button" onClick="{{toggleMenu}}" aria-label="{{menuLabel}}" aria-expanded="{{menuOpen}}" aria-controls="site-menu" style="justify-self: start; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; background: none; border: 0; color: #1C2B27; cursor: pointer; padding: 0; margin-left: -10px">
+<sc-if value="{{menuClosed}}" hint-placeholder-val="{{true}}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h12"></path></svg></sc-if>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg></sc-if>
+</button>
+<a href="#" class="serif" style="font-size: 38px; line-height: 1; text-decoration: none; letter-spacing: -0.01em; justify-self: center">ambar</a>
+<div style="display: flex; justify-content: flex-end; gap: 2px">
+<button type="button" aria-label="Search" style="width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; color: #1C2B27; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2"></path></svg></button>
+<button type="button" aria-label="Account" style="width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; color: #1C2B27; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg></button>
+<button type="button" aria-label="Wishlist" style="width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; color: #1C2B27; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg></button>
+<button type="button" aria-label="Bag" style="width: 44px; height: 44px; display: grid; place-items: center; background: none; border: 0; color: #1C2B27; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg></button>
+</div>
+</div>
+</header>
+
+<div style="position: fixed; inset: 0; z-index: 45; pointer-events: {{menuEvents}}">
+<button type="button" class="scrim" onClick="{{closeMenu}}" aria-label="Close menu" tabindex="-1" style="position: absolute; inset: 0; width: 100%; border: 0; padding: 0; margin: 0; background: rgba(28,43,39,0.42); opacity: {{scrimOp}}; cursor: pointer"></button>
+<nav id="site-menu" class="drawer {{drawerCls}}" aria-label="Main" style="position: absolute; top: 0; bottom: 0; left: 0; width: min(560px, 100%); background: #FBF8F2; display: flex; flex-direction: column; transform: translateX({{drawerX}}); visibility: {{drawerVis}}; box-shadow: 30px 0 60px -30px rgba(28,43,39,0.35)">
+<div style="flex: 1; overflow-y: auto; padding: 116px clamp(20px, 2.4vw, 32px) 24px">
+<ul style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{navItems}}" as="n" hint-placeholder-count="7">
+<li style="border-bottom: 1px solid rgba(28,43,39,0.16)">
+<sc-if value="{{n.hasSub}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{n.toggle}}" aria-expanded="{{n.open}}" class="nav-link serif" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; background: none; border: 0; cursor: pointer; font-size: clamp(34px, 3.4vw, 46px); line-height: 1.1; text-align: left"><span>{{n.label}}</span><svg class="nav-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex: none; transform: rotate({{n.rot}})"><path d="M12 5v14M5 12h14"></path></svg></button>
+<sc-if value="{{n.open}}" hint-placeholder-val="{{false}}">
+<ul style="list-style: none; margin: 0; padding: 0 0 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px">
+<sc-for list="{{n.sub}}" as="s" hint-placeholder-count="4"><li><a href="#" class="nav-link" style="font-size: 16px; font-weight: 500">{{s}}</a></li></sc-for>
+</ul>
+</sc-if>
+</sc-if>
+<sc-if value="{{n.noSub}}" hint-placeholder-val="{{true}}">
+<a href="#" class="nav-link serif" style="display: block; padding: 22px 0; font-size: clamp(34px, 3.4vw, 46px); line-height: 1.1; color: {{n.color}}">{{n.label}}</a>
+</sc-if>
+</li>
+</sc-for>
+</ul>
+</div>
+<div class="util" style="background: #EFE6D6; padding: 24px clamp(20px, 2.4vw, 32px) 26px">
+<div style="display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 16px"><a href="#">Your account</a><a href="#">Wishlist</a><a href="#">Track your order</a><a href="#">Contact</a></div>
+<p style="margin: 18px 0 0; font-size: 14px; color: #4A4E48">Fabric is cut to your length and cannot be returned.</p>
+</div>
+</nav>
+</div>
+
+<section data-g="hero" aria-label="Featured collections" style="position: relative; height: clamp(660px, 92vh, 880px); margin-top: -76px">
+<div data-g="hero-inner" style="position: absolute; inset: 0">
+<sc-for list="{{slides}}" as="s" hint-placeholder-count="3">
+<div data-g="slide" style="position: absolute; inset: 0; opacity: {{s.op}}; visibility: {{s.vis}}">
+<div style="max-width: 1320px; height: 100%; margin: 0 auto; padding: 100px clamp(16px, 4vw, 56px) 92px; box-sizing: border-box">
+<div class="hero-grid">
+<div style="align-self: center">
+<div data-g="rise" style="display: flex; gap: 12px; align-items: center; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #4A4E48; font-weight: 600"><span style="color: #9A5F05">{{s.n}}</span><span style="width: 32px; height: 1px; background: #1C2B27; opacity: 0.4"></span><span>{{s.eyebrow}}</span></div>
+<h1 class="serif" style="margin: 22px 0 0; font-size: clamp(56px, 8.4vw, 132px); line-height: 0.9; letter-spacing: -0.02em"><span data-g="rise" style="display: block">{{s.l1}}</span><span data-g="rise" style="display: block; font-style: italic; color: {{s.ink}}">{{s.l2}}</span></h1>
+<p data-g="rise" style="max-width: 420px; margin: 26px 0 0; font-size: 16px; line-height: 1.6; color: #4A4E48">{{s.p}}</p>
+<div data-g="rise" style="display: flex; gap: 24px; align-items: center; margin-top: 34px; flex-wrap: wrap">
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; height: 50px; padding: 0 26px; background: #1C2B27; color: #F5EFE4; text-decoration: none; border-radius: 999px; font-size: 14px; font-weight: 600">{{s.cta}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#" style="font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 6px">Explore fabrics</a>
+</div>
+</div>
+<div class="hero-art" style="position: relative; display: flex; justify-content: center; align-items: flex-end; min-height: 0">
+<div data-g="slide-arch" style="position: relative; width: min(430px, 100%); height: 100%; border-radius: 999px 999px 0 0; background: {{s.arch}}; overflow: hidden">
+<sc-if value="{{s.hasImg}}" hint-placeholder-val="{{false}}"><div data-g="slide-model" style="position: absolute; inset: 0"><img src="{{s.img}}" alt="{{s.caption}}" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block"></div></sc-if>
+<sc-if value="{{s.noImg}}" hint-placeholder-val="{{true}}"><div data-g="slide-model" style="position: absolute; left: 8%; right: 8%; bottom: 0; height: 92%">
+<dc-import name="Model" o="{{s.o}}" uid="{{s.uid}}" hint-size="100%,100%"></dc-import>
+</div></sc-if>
+</div>
+<div class="hero-cap" style="position: absolute; right: 0; bottom: 32px; background: #FBF8F2; padding: 14px 18px; border-radius: 4px; box-shadow: 0 12px 32px rgba(28,43,39,0.12); font-size: 13px; max-width: 220px">
+<div style="font-weight: 600">{{s.caption}}</div>
+<div style="color: #4A4E48; margin-top: 4px">From ₹[PRICE]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 18px; z-index: 3">
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); display: flex; gap: 20px; align-items: center">
+<sc-for list="{{slides}}" as="s" hint-placeholder-count="3">
+<button type="button" onClick="{{s.pick}}" aria-label="Show {{s.label}}" style="flex: 0 1 180px; background: none; border: 0; padding: 12px 0; cursor: pointer; text-align: left; font: inherit; color: #1C2B27">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em">{{s.n}} · {{s.label}}</span>
+<span style="display: block; height: 2px; background: rgba(28,43,39,0.15); margin-top: 10px; position: relative; overflow: hidden"><span data-g="bar" style="position: absolute; inset: 0; background: #1C2B27; transform-origin: 0 50%; transform: scaleX({{s.bar}})"></span></span>
+</button>
+</sc-for>
+<div style="margin-left: auto; display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #4A4E48">Scroll<span style="display: block; width: 1px; height: 36px; background: rgba(28,43,39,0.15); position: relative; overflow: hidden"><span class="cue" style="position: absolute; inset: 0; background: #1C2B27"></span></span></div>
+</div>
+</div>
+</section>
+
+<section data-g="ward-outer" aria-label="The wardrobe" style="position: relative">
+<div data-g="ward" style="position: sticky; top: 0; height: clamp(660px, 100vh, 900px); background: #F3E6DC; overflow: hidden; display: flex">
+<div style="max-width: 1320px; width: 100%; margin: 0 auto; padding: 92px clamp(16px, 4vw, 56px) 28px; box-sizing: border-box; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px 24px; flex-wrap: wrap">
+<h2 class="serif" style="margin: 0; font-size: clamp(36px, 4.4vw, 60px); line-height: 1; letter-spacing: -0.01em">The wardrobe, <em>one model</em></h2>
+<p style="margin: 0; font-size: 14px; color: #4A4E48">Keep scrolling — the outfit changes with you.</p>
+</div>
+<div class="ward-grid" style="flex: 1; min-height: 0; margin-top: 20px">
+<ol class="ward-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px">
+<sc-for list="{{looks}}" as="l" hint-placeholder-count="4">
+<li data-g="look-name" style="opacity: {{l.nameOp}}; display: flex; gap: 16px; align-items: baseline"><span style="font-size: 12px; font-weight: 700; color: #9A5F05; letter-spacing: 0.06em">{{l.n}}</span><span class="serif" style="font-size: clamp(24px, 2.4vw, 34px); line-height: 1.1">{{l.title}}</span></li>
+</sc-for>
+</ol>
+<div class="ward-stage" style="position: relative; border-radius: 999px 999px 0 0; overflow: hidden">
+<sc-for list="{{looks}}" as="l" hint-placeholder-count="4">
+<div data-g="look" data-tint="{{l.tint}}" style="position: absolute; inset: 0; background: {{l.arch}}; clip-path: {{l.clip}}">
+<sc-if value="{{l.hasImg}}" hint-placeholder-val="{{false}}"><img src="{{l.img}}" alt="{{l.title}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block"></sc-if>
+<sc-if value="{{l.noImg}}" hint-placeholder-val="{{true}}"><div style="position: absolute; left: 9%; right: 9%; bottom: 0; height: 93%">
+<dc-import name="Model" o="{{l.o}}" uid="{{l.uid}}" hint-size="100%,100%"></dc-import>
+</div></sc-if>
+</div>
+</sc-for>
+<div data-g="scan" style="position: absolute; left: 0; right: 0; top: 0; height: 2px; background: #B8760A; box-shadow: 0 0 14px rgba(184,118,10,0.7); opacity: 0"></div>
+</div>
+<div class="ward-info" style="display: grid">
+<sc-for list="{{looks}}" as="l" hint-placeholder-count="4">
+<div data-g="look-info" style="grid-area: 1 / 1; opacity: {{l.infoOp}}; visibility: {{l.infoVis}}; max-width: 340px">
+<div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #4A4E48">{{l.n}} · {{l.kind}}</div>
+<h3 class="serif" style="margin: 12px 0 0; font-size: 36px; line-height: 1.05; font-weight: 400">{{l.title}}</h3>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: #4A4E48">{{l.desc}}</p>
+<div style="display: flex; gap: 8px; margin-top: 18px" aria-hidden="true"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{l.o.base}}; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.15)"></span><span style="width: 18px; height: 18px; border-radius: 50%; background: {{l.o.dupatta}}; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.15)"></span><span style="width: 18px; height: 18px; border-radius: 50%; background: {{l.o.border}}; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.15)"></span></div>
+<div style="margin-top: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px"><span style="font-weight: 600; font-size: 16px">From ₹[PRICE]</span><span style="color: #4A4E48">{{l.fabric}}</span></div>
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 24px; margin-top: 22px; border: 1px solid #1C2B27; color: #1C2B27; text-decoration: none; border-radius: 999px; font-size: 14px; font-weight: 600">Shop this look</a>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="margin-top: 22px">
+<div class="tape" style="position: relative; height: 16px"><div data-g="tape-fill" style="position: absolute; left: 0; right: 0; top: -2px; height: 3px; background: #B8760A; transform-origin: 0 50%; transform: scaleX(0.04)"></div></div>
+<div style="display: flex; justify-content: space-between; font-size: 11px; color: #4A4E48; margin-top: 6px; letter-spacing: 0.06em"><span>LOOK 01</span><span>02</span><span>03</span><span>04</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section data-g="cat-outer" aria-label="Shop by category" style="position: relative; background: #1C2B27; color: #F5EFE4">
+<div data-g="cat" style="position: sticky; top: 0; height: clamp(640px, 100vh, 880px); overflow: hidden; display: flex; flex-direction: column; justify-content: center">
+<div data-g="cat-track" style="display: flex; gap: 28px; align-items: flex-start; padding: 64px clamp(16px, 5vw, 80px) 0; width: max-content">
+<div style="width: clamp(260px, 30vw, 400px); padding-right: 40px; box-sizing: border-box">
+<div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: #E0B04E">Shop by category</div>
+<h2 class="serif" style="margin: 18px 0 0; font-size: clamp(40px, 4.6vw, 64px); line-height: 1; font-weight: 400">From the first metre <em>to the last tassel.</em></h2>
+<p style="margin: 22px 0 0; font-size: 15px; line-height: 1.6; color: rgba(245,239,228,0.78)">Fabric by the metre, ready-made outfits and every finishing touch in between.</p>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: 34px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em">Keep scrolling<svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1 8h25M20 2l6 6-6 6"></path></svg></div>
+</div>
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="7">
+<a href="#" data-g="cat-card" class="cat-card" style="display: flex; flex-direction: column; width: clamp(260px, 26vw, 350px); text-decoration: none; color: #F5EFE4">
+<div class="{{c.pat}}" data-g="cat-pat" style="height: clamp(300px, 54vh, 460px); border-radius: 2px"></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 18px; gap: 12px"><span class="serif" style="font-size: 32px; line-height: 1.1">{{c.title}}</span><span style="font-size: 12px; color: #E0B04E; font-weight: 700; letter-spacing: 0.06em">{{c.n}}</span></div>
+<span style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: rgba(245,239,228,0.75); margin-top: 6px; line-height: 1.5">{{c.sub}}<svg class="cat-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" style="flex: none"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</sc-for>
+<a href="#" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; width: clamp(220px, 20vw, 280px); height: clamp(300px, 54vh, 460px); border: 1px solid rgba(245,239,228,0.3); border-radius: 2px; color: #F5EFE4; text-decoration: none; margin-right: clamp(16px, 5vw, 80px)"><span class="serif" style="font-size: 30px">All categories</span><svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1 8h25M20 2l6 6-6 6"></path></svg></a>
+</div>
+<div style="padding: 36px clamp(16px, 5vw, 80px) 0"><div style="height: 1px; background: rgba(245,239,228,0.2); position: relative"><div data-g="cat-prog" style="position: absolute; left: 0; right: 0; top: -1px; height: 3px; background: #E0B04E; transform-origin: 0 50%; transform: scaleX(0.1)"></div></div></div>
+</div>
+</section>
+
+<section data-g="turn" aria-label="Every angle" style="background: #F5EFE4">
+<div data-g="reveal" style="max-width: 1320px; margin: 0 auto; padding: 120px clamp(16px, 4vw, 56px) 0">
+<div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: #9A5F05">Every angle</div>
+<h2 class="serif" style="margin: 16px 0 0; font-size: clamp(40px, 5vw, 72px); line-height: 1; font-weight: 400; max-width: 760px">Turn it around <em>before you buy.</em></h2>
+</div>
+<div data-g="turn-grid" class="turn-grid" style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px)">
+<div style="position: relative">
+<div class="turn-sticky" style="position: sticky; top: 0; height: clamp(620px, 100vh, 860px); display: flex; align-items: center; justify-content: center">
+<div style="position: relative; width: min(420px, 100%); height: 84%; display: flex; justify-content: center; align-items: flex-end">
+<div style="position: absolute; inset: 0; border: 1px solid rgba(28,43,39,0.16); border-bottom: 0; border-radius: 999px 999px 0 0"></div>
+<div style="position: absolute; left: 50%; bottom: -150px; width: 340px; height: 340px; margin-left: -170px; transform: rotateX(78deg)">
+<div data-g="dial" style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px dashed rgba(28,43,39,0.35)"><span style="position: absolute; top: -6px; left: 50%; margin-left: -6px; width: 12px; height: 12px; border-radius: 50%; background: #B8760A"></span></div>
+</div>
+<div style="position: absolute; top: 28%; left: -8px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #4A4E48">Rotation</span>
+<span data-g="deg" class="serif" style="font-size: 52px; line-height: 1">0°</span>
+</div>
+<sc-if value="{{hasTurnFrames}}" hint-placeholder-val="{{false}}"><div style="position: relative; width: 78%; height: 96%">
+<sc-for list="{{turnFrames}}" as="f" hint-placeholder-count="1"><img data-g="turn-frame" src="{{f.src}}" alt="{{f.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; opacity: {{f.op}}"></sc-for>
+</div></sc-if>
+<sc-if value="{{noTurnFrames}}" hint-placeholder-val="{{true}}"><div style="position: relative; width: 60%; height: 92%; perspective: 1400px">
+<div data-g="spin" style="position: absolute; inset: 0; transform-style: preserve-3d">
+<div style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden"><dc-import name="Model" o="{{turnO}}" uid="tf" hint-size="100%,100%"></dc-import></div>
+<div style="position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: rotateY(180deg)"><dc-import name="Model" o="{{turnO}}" uid="tb" back="{{true}}" hint-size="100%,100%"></dc-import></div>
+</div>
+</div></sc-if>
+</div>
+</div>
+</div>
+<div>
+<sc-for list="{{turnBlocks}}" as="t" hint-placeholder-count="3">
+<article data-g="turn-block" class="turn-block" style="min-height: clamp(480px, 78vh, 680px); display: flex; flex-direction: column; justify-content: center; max-width: 460px">
+<div style="display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #4A4E48"><span style="color: #9A5F05">{{t.deg}}</span><span style="width: 28px; height: 1px; background: rgba(28,43,39,0.4)"></span>{{t.view}}</div>
+<h3 class="serif" style="margin: 16px 0 0; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.05; font-weight: 400">{{t.title}}</h3>
+<p style="margin: 16px 0 0; font-size: 16px; line-height: 1.65; color: #4A4E48">{{t.body}}</p>
+<dl style="margin: 26px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 24px; font-size: 14px; border-top: 1px solid rgba(28,43,39,0.15); padding-top: 18px"><dt style="color: #4A4E48">{{t.k1}}</dt><dd style="margin: 0; font-weight: 600">{{t.v1}}</dd><dt style="color: #4A4E48">{{t.k2}}</dt><dd style="margin: 0; font-weight: 600">{{t.v2}}</dd></dl>
+</article>
+</sc-for>
+<article data-g="turn-block" class="turn-block" style="min-height: clamp(480px, 78vh, 680px); display: flex; flex-direction: column; justify-content: center; max-width: 460px">
+<div style="display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #4A4E48"><span style="color: #9A5F05">360°</span><span style="width: 28px; height: 1px; background: rgba(28,43,39,0.4)"></span>Full turn</div>
+<h3 class="serif" style="margin: 16px 0 0; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.05; font-weight: 400">Wear it ready, or stitch it your way</h3>
+<p style="margin: 16px 0 0; font-size: 16px; line-height: 1.65; color: #4A4E48">Pick your size in the ready-made set, or buy the same ajrakh modal silk by the metre and have it tailored.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px">
+<a href="#" style="display: inline-flex; align-items: center; height: 50px; padding: 0 26px; background: #1C2B27; color: #F5EFE4; text-decoration: none; border-radius: 999px; font-size: 14px; font-weight: 600">Shop the set</a>
+<a href="#" style="display: inline-flex; align-items: center; height: 50px; padding: 0 24px; border: 1px solid #1C2B27; color: #1C2B27; text-decoration: none; border-radius: 999px; font-size: 14px; font-weight: 600">Fabric · ₹420 per metre</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section data-g="look-sec" aria-label="Lookbook" style="padding: 120px 0 100px; overflow: hidden; background: #FBF8F2">
+<div data-g="reveal" style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+<h2 class="serif" style="margin: 0; font-size: clamp(40px, 5vw, 72px); line-height: 1; font-weight: 400">Looks in <em>motion</em></h2>
+<p style="margin: 0; max-width: 360px; font-size: 15px; line-height: 1.6; color: #4A4E48">A season of outfits on one model — every look links to the piece, or to its fabric by the metre.</p>
+</div>
+<div aria-hidden="true" style="white-space: nowrap; margin: 44px 0 56px">
+<div data-g="marquee" class="serif" style="display: inline-block; font-size: clamp(64px, 10vw, 150px); font-style: italic; color: #E2D6BF; line-height: 1">Bandhani · Ajrakh · Chikankari · Leheriya · Kalamkari · Gota patti · Bandhani · Ajrakh · Chikankari · Leheriya · Kalamkari</div>
+</div>
+<div class="look-grid" style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); box-sizing: border-box">
+<sc-for list="{{lookCols}}" as="col" hint-placeholder-count="3">
+<div data-g="col" style="display: flex; flex-direction: column; gap: 28px; padding-top: {{col.pad}}">
+<sc-for list="{{col.cards}}" as="k" hint-placeholder-count="3">
+<a href="#" data-g="look-card" style="display: block; text-decoration: none; color: #1C2B27">
+<div style="position: relative; aspect-ratio: 3 / 4; background: {{k.bg}}; overflow: hidden; border-radius: 2px">
+<sc-if value="{{k.hasImg}}" hint-placeholder-val="{{false}}"><div data-g="look-fig" style="position: absolute; inset: 0; transform-origin: 50% 100%"><img src="{{k.img}}" alt="{{k.title}}" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block"></div></sc-if>
+<sc-if value="{{k.noImg}}" hint-placeholder-val="{{true}}"><div data-g="look-fig" style="position: absolute; left: 12%; right: 12%; bottom: 0; height: 90%; transform-origin: 50% 100%"><dc-import name="Model" o="{{k.o}}" uid="{{k.uid}}" hint-size="100%,100%"></dc-import></div></sc-if>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; font-size: 14px"><span style="font-weight: 600">{{k.title}}</span><span style="color: #4A4E48">{{k.fabric}}</span></div>
+</a>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section data-g="metre-outer" aria-label="Cut to order" style="position: relative; background: #EFE6D6">
+<div data-g="metre" style="position: sticky; top: 0; height: clamp(580px, 100vh, 820px); display: flex; align-items: center; overflow: hidden">
+<div style="max-width: 1320px; width: 100%; margin: 0 auto; padding: 60px clamp(16px, 4vw, 56px) 0; box-sizing: border-box">
+<div style="display: flex; justify-content: space-between; gap: 32px 40px; flex-wrap: wrap; align-items: flex-end">
+<div style="max-width: 560px">
+<div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: #9A5F05">Cut to order</div>
+<h2 class="serif" style="margin: 16px 0 0; font-size: clamp(40px, 5vw, 72px); line-height: 1; font-weight: 400">Buy only the length <em>you need.</em></h2>
+<p style="margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: #4A4E48">Every fabric is sold by the metre in 0.25 m steps. Scroll to unroll — the price updates as the length grows, so there is no arithmetic to do.</p>
+</div>
+<div style="text-align: right" aria-live="polite">
+<div data-g="m-len" class="serif" style="font-size: clamp(64px, 8vw, 112px); line-height: 0.9">2.5 m</div>
+<div style="font-size: 15px; margin-top: 10px; color: #4A4E48"><strong data-g="m-price" style="font-size: 24px; color: #1C2B27">₹550</strong> · Block print cotton at ₹220 per metre</div>
+</div>
+</div>
+<div style="position: relative; margin-top: 52px; height: 196px">
+<div data-g="strip" class="p-rose" style="position: absolute; left: 0; right: 0; top: 10px; height: 170px; transform-origin: 0 50%; transform: scaleX(0.833); box-shadow: 0 22px 30px -20px rgba(28,43,39,0.45)"></div>
+<div data-g="roll" style="position: absolute; top: 0; left: 83.3%; width: 40px; height: 190px; margin-left: -20px; border-radius: 20px; background: linear-gradient(90deg, #7A2F28, #C98C82 45%, #7A2F28); box-shadow: 0 10px 20px rgba(28,43,39,0.25)"></div>
+</div>
+<div class="tape" style="height: 16px; margin-top: 14px"></div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #4A4E48; margin-top: 6px"><span>0 m</span><span>1 m</span><span>2 m</span><span>3 m</span></div>
+</div>
+</div>
+</section>
+
+<section aria-label="New arrivals" style="padding: 120px 0 120px; background: #F5EFE4">
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px)">
+<div data-g="reveal" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
+<h2 class="serif" style="margin: 0; font-size: clamp(40px, 4.6vw, 64px); line-height: 1; font-weight: 400">New arrivals</h2>
+<a href="#" style="font-size: 14px; font-weight: 600; text-underline-offset: 6px">See all new arrivals</a>
+</div>
+<div class="prod-grid" style="margin-top: 44px">
+<sc-for list="{{products}}" as="p" hint-placeholder-count="4">
+<article data-g="card" class="prod">
+<div style="position: relative">
+<a href="#" aria-label="{{p.title}}" style="display: block; position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 2px">
+<div class="prod-img {{p.pat}}" style="position: absolute; inset: 0"></div>
+<span style="position: absolute; top: 14px; left: 14px; background: {{p.tagBg}}; color: #FBF8F2; font-size: 11px; font-weight: 700; padding: 5px 9px; border-radius: 2px; letter-spacing: 0.06em; text-transform: uppercase">{{p.tag}}</span>
+</a>
+<button type="button" aria-label="Add {{p.title}} to wishlist" style="position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; border-radius: 50%; background: #FBF8F2; border: 0; display: grid; place-items: center; color: #1C2B27; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg></button>
+</div>
+<h3 style="margin: 16px 0 0; font-size: 15px; font-weight: 600">{{p.title}}</h3>
+<div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: 6px; font-size: 14px">
+<strong style="font-size: 16px">{{p.price}}</strong><span style="color: #4A4E48">{{p.unit}}</span>
+<sc-if value="{{p.sale}}" hint-placeholder-val="{{false}}"><s style="color: #4A4E48">{{p.was}}</s><span style="color: #9A5F05; font-weight: 600">{{p.off}}</span></sc-if>
+</div>
+<div style="display: flex; gap: 6px; margin-top: 12px" aria-hidden="true">
+<sc-for list="{{p.sw}}" as="c" hint-placeholder-count="2"><span style="width: 14px; height: 14px; border-radius: 50%; background: {{c}}; box-shadow: inset 0 0 0 1px rgba(28,43,39,0.15)"></span></sc-for>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section data-g="offer" aria-label="Festive offer" style="background: #7E4C04; color: #FBF3E4; padding: 0 0 110px; overflow: hidden; position: relative">
+<div aria-hidden="true" style="white-space: nowrap; border-bottom: 1px solid rgba(251,243,228,0.25); padding: 18px 0">
+<div data-g="offer-marquee" style="display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase">Festive offer  ·  [XX]% off unstitched suits  ·  Code [CODE]  ·  Ends [END DATE]  ·  Festive offer  ·  [XX]% off unstitched suits  ·  Code [CODE]  ·  Ends [END DATE]  ·  Festive offer  ·  [XX]% off unstitched suits  ·  Code [CODE]  ·</div>
+</div>
+<div style="max-width: 1320px; margin: 0 auto; padding: 96px clamp(16px, 4vw, 56px) 0; display: flex; flex-wrap: wrap; gap: 56px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 460px; min-width: 0">
+<div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: #F2CF86">This season only</div>
+<div style="overflow: hidden; margin-top: 10px"><div data-g="offer-num" class="serif" style="font-size: clamp(110px, 17vw, 240px); line-height: 0.85; letter-spacing: -0.03em">[XX]<span style="font-style: italic; font-size: 0.55em">% off</span></div></div>
+<p style="margin: 22px 0 0; font-size: 18px; line-height: 1.55; max-width: 480px; color: rgba(251,243,228,0.9)">On every unstitched suit and dupatta in the Festive edit. Fabric by the metre is included — cut to your length, at the offer price.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px">
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 28px; background: #FBF3E4; color: #1C2B27; text-decoration: none; border-radius: 999px; font-size: 14px; font-weight: 700">Shop the offer<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<div data-g="ticket" style="flex: 0 1 420px; background: #FBF3E4; color: #1C2B27; border-radius: 6px; display: flex; box-shadow: 0 30px 60px -24px rgba(0,0,0,0.45); transform: rotate(-2deg)">
+<div style="flex: 1; padding: 30px 28px; min-width: 0">
+<div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: #7E4C04">Your code</div>
+<div class="serif" style="font-size: 46px; line-height: 1; margin-top: 10px; letter-spacing: 0.04em">[CODE]</div>
+<div style="font-size: 13px; line-height: 1.55; color: #4A4E48; margin-top: 14px">Apply at checkout. Valid until [END DATE] on orders above ₹[MINIMUM]. One code per order.</div>
+<button type="button" onClick="{{copyCode}}" style="margin-top: 20px; height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #1C2B27; background: none; color: #1C2B27; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg>{{copyLabel}}</button>
+</div>
+<div aria-hidden="true" style="width: 74px; border-left: 2px dashed rgba(28,43,39,0.3); display: flex; align-items: center; justify-content: center; position: relative">
+<span class="serif" style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 22px; letter-spacing: 0.08em; color: #7E4C04">ambar · festive</span>
+<span style="position: absolute; top: -12px; left: -13px; width: 24px; height: 24px; border-radius: 50%; background: #7E4C04"></span>
+<span style="position: absolute; bottom: -12px; left: -13px; width: 24px; height: 24px; border-radius: 50%; background: #7E4C04"></span>
+</div>
+</div>
+</div>
+</section>
+
+<section data-g="testi" aria-label="Customer reviews" style="background: #FBF8F2; padding: 120px 0 110px; overflow: hidden">
+<div data-g="reveal" style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
+<div>
+<div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: #9A5F05">Customer reviews</div>
+<h2 class="serif" style="margin: 16px 0 0; font-size: clamp(40px, 5vw, 72px); line-height: 1; font-weight: 400">In their <em>own words</em></h2>
+</div>
+<a href="#" style="font-size: 14px; font-weight: 600; text-underline-offset: 6px">Read all reviews</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 24px; margin-top: 56px">
+<sc-for list="{{tRows}}" as="row" hint-placeholder-count="2">
+<div data-g="t-row" style="display: flex; gap: 24px; width: max-content; padding-left: {{row.pad}}">
+<sc-for list="{{row.cards}}" as="t" hint-placeholder-count="4">
+<figure style="margin: 0; width: clamp(280px, 30vw, 400px); background: {{t.bg}}; padding: 30px 30px 26px; border-radius: 4px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px">
+<svg width="34" height="26" viewBox="0 0 34 26" fill="#9A5F05" aria-hidden="true"><path d="M0 26V15C0 6.5 4.5 1.5 13 0l1.5 4C9.6 5.4 7.6 8.2 7.4 12H14v14H0zm19 0V15c0-8.5 4.5-13.5 13-15l1.5 4c-4.9 1.4-6.9 4.2-7.1 8H33v14H19z"></path></svg>
+<blockquote class="serif" style="margin: 0; font-size: 24px; line-height: 1.3; color: #1C2B27">“[Paste a real customer review here — what they bought, how it felt, whether they would order again.]”</blockquote>
+<figcaption style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; border-top: 1px solid rgba(28,43,39,0.15); padding-top: 16px; font-size: 13px"><span><strong style="display: block; font-size: 14px">[Customer name]</strong><span style="color: #4A4E48">[City]</span></span><span style="color: #4A4E48; text-align: right">Bought: {{t.bought}}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section data-g="cta" aria-label="Get in touch" style="background: #EFE6D6; padding: 130px 0 120px; overflow: hidden; position: relative">
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); position: relative">
+<svg data-g="badge" viewBox="0 0 200 200" aria-hidden="true" style="position: absolute; right: clamp(16px, 4vw, 56px); top: -40px; width: clamp(120px, 14vw, 190px); height: auto">
+<defs><path id="badge-ring" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"></path></defs>
+<circle cx="100" cy="100" r="99" fill="#1C2B27"></circle>
+<text fill="#F5EFE4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 4.4px"><textPath href="#badge-ring">CUT TO ORDER · BY THE METRE · SINCE [YEAR] ·</textPath></text>
+<circle cx="100" cy="100" r="30" fill="#B8760A"></circle>
+</svg>
+<h2 class="serif" style="margin: 0; font-size: clamp(64px, 11vw, 168px); line-height: 0.92; letter-spacing: -0.025em; font-weight: 400">
+<span style="display: block; overflow: hidden"><span data-g="cta-word" style="display: inline-block">Find your</span></span>
+<span style="display: block; overflow: hidden"><span data-g="cta-word" style="display: inline-block; font-style: italic; color: #7E4C04">fabric.</span></span>
+</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 40px 72px; margin-top: 52px; align-items: flex-end; justify-content: space-between">
+<div style="max-width: 460px">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4E48">Not sure how many metres a suit needs, or which fabric drapes best? Send us a message — we will help you choose before you buy.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px">
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 30px; background: #1C2B27; color: #F5EFE4; text-decoration: none; border-radius: 999px; font-size: 15px; font-weight: 700">Shop fabrics<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 26px; border: 1px solid #1C2B27; color: #1C2B27; text-decoration: none; border-radius: 999px; font-size: 15px; font-weight: 700"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"></path></svg>Chat on WhatsApp</a>
+</div>
+</div>
+<div style="flex: 0 1 440px; min-width: 0">
+<label for="news-email" style="display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.04em">Get new arrivals and offers first</label>
+<div style="display: flex; gap: 8px; margin-top: 12px; border-bottom: 1.5px solid #1C2B27; padding-bottom: 6px">
+<input id="news-email" type="email" placeholder="Your email address" style="flex: 1; min-width: 0; height: 46px; border: 0; background: transparent; font: inherit; font-size: 16px; color: #1C2B27; outline-offset: 4px">
+<button type="button" style="height: 46px; padding: 0 22px; border: 0; border-radius: 999px; background: #B8760A; color: #1C2B27; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Subscribe</button>
+</div>
+<div style="font-size: 12px; color: #4A4E48; margin-top: 10px">One email a week at most. Unsubscribe any time.</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer data-g="footer" class="foot" style="background: #1C2B27; color: #F5EFE4; padding: 96px 0 32px; overflow: hidden">
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px)">
+<div class="foot-grid">
+<div>
+<p class="serif" style="margin: 0; font-size: 30px; line-height: 1.15; max-width: 300px">Fabrics and clothing, <em>chosen with care.</em></p>
+</div>
+<div><h4 style="margin: 0 0 18px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #E0B04E">Shop</h4><div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><a href="#">New arrivals</a><a href="#">Bestsellers</a><a href="#">Sale</a><a href="#">All categories</a><a href="#">By fabric</a><a href="#">By print</a></div></div>
+<div><h4 style="margin: 0 0 18px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #E0B04E">Help</h4><div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><a href="#">Track your order</a><a href="#">Shipping</a><a href="#">Returns and refunds</a><a href="#">Questions and answers</a></div></div>
+<div><h4 style="margin: 0 0 18px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #E0B04E">Company</h4><div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px"><a href="#">About us</a><a href="#">Contact</a></div></div>
+</div>
+<div data-g="wordmark" class="serif" aria-hidden="true" style="font-size: clamp(120px, 25vw, 360px); line-height: 0.78; letter-spacing: -0.03em; margin-top: 88px">ambar</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(245,239,228,0.18); font-size: 13px; color: rgba(245,239,228,0.75)"><span>© 2026 Ambar</span><span style="display: flex; gap: 24px"><a href="#">Privacy policy</a><a href="#">Terms and conditions</a></span></div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"motion":{"editor":"boolean","default":true,"section":"Behaviour"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._tries = 0;
+    this.loadGsap();
+    this._t = setTimeout(() => this.initMotion(), 200);
+  }
+  componentWillUnmount() {
+    clearTimeout(this._t);
+    if (this._ctx) this._ctx.revert();
+  }
+  loadGsap() {
+    // The <head> tags load GSAP too; this is a fallback for previews that skip them.
+    if (window.gsap && window.ScrollTrigger) return;
+    if (document.querySelector('script[data-ambar-gsap]')) return;
+    ['/_blob/3d47696f65c77b3a8ff4d7a5dbac598b', '/_blob/ab43a6849eace14be8a03b7d02d6248f'].forEach((src) => {
+      const s = document.createElement('script');
+      s.src = src; s.async = false; s.setAttribute('data-ambar-gsap', '1');
+      document.head.appendChild(s);
+    });
+  }
+  initMotion() {
+    if (this.props.motion === false) return;
+    const g = window.gsap, ST = window.ScrollTrigger;
+    const root = document.querySelector('[data-g="root"]');
+    if (!g || !ST || !root || !root.querySelector('[data-g="slide"]')) {
+      this._tries += 1;
+      if (this._tries < 80) this._t = setTimeout(() => this.initMotion(), 150);
+      return;
+    }
+    // The page scrolls inside its own root, so ScrollTrigger listens to that element.
+    const scroller = root;
+    const vh = root.clientHeight || window.innerHeight;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    g.registerPlugin(ST);
+    ST.defaults({ scroller: scroller });
+    const one = (k, ctx) => (ctx || root).querySelector('[data-g="' + k + '"]');
+    const all = (k, ctx) => Array.prototype.slice.call((ctx || root).querySelectorAll('[data-g="' + k + '"]'));
+    this._ctx = g.context(() => {
+      this.heroCarousel(g, all);
+      if (reduce) return;
+      this.scrollScenes(g, ST, one, all, vh);
+    }, root);
+    setTimeout(() => ST.refresh(), 900);
+  }
+  heroCarousel(g, all) {
+    const slides = all('slide'), bars = all('bar'), n = slides.length;
+    let cur = 0;
+    g.set(slides, { autoAlpha: 0 });
+    g.set(slides[0], { autoAlpha: 1 });
+    g.set(bars, { scaleX: 0, transformOrigin: '0% 50%' });
+    const run = (i) => {
+      g.killTweensOf(bars);
+      bars.forEach((b, j) => g.set(b, { scaleX: j < i ? 1 : 0 }));
+      g.fromTo(bars[i], { scaleX: 0 }, { scaleX: 1, duration: 6, ease: 'none', onComplete: () => show((i + 1) % n) });
+    };
+    const show = (i) => {
+      if (i === cur) return;
+      const a = slides[cur], b = slides[i];
+      cur = i;
+      g.to(a, { autoAlpha: 0, duration: 0.7, ease: 'power2.out' });
+      g.set(b, { autoAlpha: 1 });
+      g.fromTo(all('rise', b), { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.08, ease: 'power3.out', delay: 0.15 });
+      g.fromTo(all('slide-model', b), { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'power3.inOut' });
+      g.fromTo(all('slide-arch', b), { scale: 0.92 }, { scale: 1, duration: 1.2, ease: 'power3.out' });
+      run(i);
+    };
+    this.goSlide = (i) => show(i);
+    run(0);
+  }
+  scrollScenes(g, ST, one, all, vh) {
+    // Header turns solid once the hero starts to move
+    g.to(one('header'), { backgroundColor: 'rgba(245,239,228,0.94)', boxShadow: '0 1px 0 rgba(28,43,39,0.10)', ease: 'none',
+      scrollTrigger: { trigger: one('hero'), start: 'top top', end: '+=140', scrub: true } });
+    // Hero drifts away
+    g.to(one('hero-inner'), { yPercent: -10, autoAlpha: 0.3, ease: 'none',
+      scrollTrigger: { trigger: one('hero'), start: 'top top', end: 'bottom top', scrub: true } });
+
+    // The wardrobe: sticky stage, one outfit per scroll step
+    const wOuter = one('ward-outer'), ward = one('ward');
+    const looks = all('look'), names = all('look-name'), infos = all('look-info'), n = looks.length;
+    g.set(wOuter, { height: ward.offsetHeight + vh * 0.95 * (n - 1) });
+    const scan = one('scan');
+    const wtl = g.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: wOuter, start: 'top top', end: 'bottom bottom', scrub: 0.6,
+      snap: { snapTo: 1 / (n - 1), duration: { min: 0.2, max: 0.6 }, ease: 'power1.inOut' } } });
+    for (let i = 1; i < n; i++) {
+      const at = i - 1;
+      wtl.fromTo(looks[i], { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1, immediateRender: false }, at)
+        .fromTo(scan, { top: '0%', opacity: 1 }, { top: '100%', opacity: 1, duration: 1, immediateRender: false }, at)
+        .to(names[i - 1], { opacity: 0.28, duration: 0.3 }, at + 0.35)
+        .to(names[i], { opacity: 1, duration: 0.3 }, at + 0.35)
+        .to(infos[i - 1], { autoAlpha: 0, y: -16, duration: 0.3 }, at + 0.2)
+        .fromTo(infos[i], { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.3, immediateRender: false }, at + 0.55)
+        .to(ward, { backgroundColor: looks[i].getAttribute('data-tint'), duration: 1 }, at);
+    }
+    wtl.fromTo(one('tape-fill'), { scaleX: 0.04 }, { scaleX: 1, duration: n - 1 }, 0);
+
+    // Categories: vertical scroll drives a horizontal rail
+    const cOuter = one('cat-outer'), cat = one('cat'), track = one('cat-track');
+    const dist = () => Math.max(0, track.scrollWidth - cat.clientWidth);
+    g.set(cOuter, { height: cat.offsetHeight + dist() });
+    const rail = g.to(track, { x: () => -dist(), ease: 'none',
+      scrollTrigger: { trigger: cOuter, start: 'top top', end: 'bottom bottom', scrub: 0.5, invalidateOnRefresh: true } });
+    g.fromTo(one('cat-prog'), { scaleX: 0.02 }, { scaleX: 1, ease: 'none',
+      scrollTrigger: { trigger: cOuter, start: 'top top', end: 'bottom bottom', scrub: true } });
+    all('cat-pat').forEach((p) => g.fromTo(p, { backgroundPosition: '0px 0px' }, { backgroundPosition: '-140px 0px', ease: 'none',
+      scrollTrigger: { trigger: p, containerAnimation: rail, start: 'left right', end: 'right left', scrub: true } }));
+    all('cat-card').forEach((c) => g.from(c, { y: 70, rotation: 2, opacity: 0.25, ease: 'power2.out',
+      scrollTrigger: { trigger: c, containerAnimation: rail, start: 'left 98%', end: 'left 62%', scrub: true } }));
+
+    // 360: the model turns with the page while the text scrolls normally
+    const deg = one('deg');
+    const spinST = { trigger: one('turn-grid'), start: 'top top', end: 'bottom bottom', scrub: 0.5 };
+    const frames = all('turn-frame');
+    if (frames.length) {
+      // Real turntable photos: show the frame that matches the scroll angle
+      let shown = 0;
+      ST.create(Object.assign({}, spinST, { onUpdate: (s) => {
+        const i = Math.min(frames.length - 1, Math.floor(s.progress * frames.length));
+        if (i !== shown) { frames[shown].style.opacity = 0; frames[i].style.opacity = 1; shown = i; }
+        if (deg) deg.textContent = Math.round(s.progress * 360) + '°';
+      } }));
+    } else if (one('spin')) {
+      g.fromTo(one('spin'), { rotationY: 0 }, { rotationY: 360, ease: 'none',
+        scrollTrigger: Object.assign({}, spinST, { onUpdate: (s) => { if (deg) deg.textContent = Math.round(s.progress * 360) + '°'; } }) });
+    }
+    g.to(one('dial'), { rotation: 360, ease: 'none', scrollTrigger: Object.assign({}, spinST) });
+    all('turn-block').forEach((b) => g.from(b, { y: 60, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: b, start: 'top 78%' } }));
+
+    // Lookbook: columns at different speeds, marquee sideways
+    const ls = one('look-sec');
+    const speeds = [[6, -14], [-8, 10], [10, -24]];
+    all('col').forEach((c, i) => g.fromTo(c, { yPercent: speeds[i % 3][0] }, { yPercent: speeds[i % 3][1], ease: 'none',
+      scrollTrigger: { trigger: ls, start: 'top bottom', end: 'bottom top', scrub: true } }));
+    g.fromTo(one('marquee'), { xPercent: 0 }, { xPercent: -38, ease: 'none',
+      scrollTrigger: { trigger: ls, start: 'top bottom', end: 'bottom top', scrub: true } });
+    all('look-card').forEach((c) => g.fromTo(one('look-fig', c), { scale: 1.14, yPercent: 6 }, { scale: 1, yPercent: 0, ease: 'none',
+      scrollTrigger: { trigger: c, start: 'top bottom', end: 'center 55%', scrub: true } }));
+
+    // Cut to order: fabric unrolls, length and price follow
+    const mOuter = one('metre-outer'), metre = one('metre'), strip = one('strip'), roll = one('roll');
+    const len = one('m-len'), price = one('m-price');
+    g.set(mOuter, { height: metre.offsetHeight + vh * 1.3 });
+    g.set(roll, { left: 0 });
+    const mST = { trigger: mOuter, start: 'top top', end: 'bottom bottom', scrub: 0.4 };
+    g.fromTo(strip, { scaleX: 1 / 12 }, { scaleX: 1, ease: 'none', scrollTrigger: Object.assign({}, mST, { onUpdate: (s) => {
+      const v = Math.max(0.25, Math.round((0.25 + s.progress * 2.75) * 4) / 4);
+      len.textContent = v.toFixed(2).replace(/\.?0+$/, '') + ' m';
+      price.textContent = '₹' + Math.round(v * 220).toLocaleString('en-IN');
+    } }) });
+    g.fromTo(roll, { x: () => strip.offsetWidth / 12, rotation: 0 }, { x: () => strip.offsetWidth, rotation: 0, ease: 'none', scrollTrigger: Object.assign({}, mST, { invalidateOnRefresh: true }) });
+
+    // Offer: marquee slides, the big number rises, the coupon swings into place
+    const off = one('offer');
+    if (off) {
+      g.fromTo(one('offer-marquee'), { xPercent: 0 }, { xPercent: -33, ease: 'none',
+        scrollTrigger: { trigger: off, start: 'top bottom', end: 'bottom top', scrub: true } });
+      g.fromTo(one('offer-num'), { yPercent: 70, opacity: 0 }, { yPercent: 0, opacity: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: off, start: 'top 85%', end: 'top 35%', scrub: 0.6 } });
+      g.fromTo(one('ticket'), { rotation: -14, x: 120, y: 60, opacity: 0 }, { rotation: -2, x: 0, y: 0, opacity: 1, ease: 'power2.out',
+        scrollTrigger: { trigger: off, start: 'top 80%', end: 'center 55%', scrub: 0.6 } });
+    }
+
+    // Reviews: two rows drift in opposite directions
+    const ts = one('testi');
+    all('t-row').forEach((r, i) => g.fromTo(r, { xPercent: i % 2 ? -22 : 0 }, { xPercent: i % 2 ? 0 : -22, ease: 'none',
+      scrollTrigger: { trigger: ts, start: 'top bottom', end: 'bottom top', scrub: true } }));
+
+    // Closing call to action: headline reveals word by word, badge turns with scroll
+    const cta = one('cta');
+    g.from(all('cta-word'), { yPercent: 110, duration: 1.1, stagger: 0.14, ease: 'power3.out',
+      scrollTrigger: { trigger: cta, start: 'top 70%' } });
+    g.fromTo(one('badge'), { rotation: 0 }, { rotation: 220, ease: 'none', transformOrigin: '50% 50%',
+      scrollTrigger: { trigger: cta, start: 'top bottom', end: 'bottom top', scrub: true } });
+
+    // New arrivals and headings
+    const cards = all('card');
+    g.set(cards, { autoAlpha: 0, y: 50 });
+    ST.batch(cards, { start: 'top 90%', onEnter: (els) => g.to(els, { y: 0, autoAlpha: 1, stagger: 0.1, duration: 0.9, ease: 'power3.out', overwrite: true }) });
+    all('reveal').forEach((el) => g.from(el, { y: 40, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' } }));
+    g.from(one('wordmark'), { yPercent: 45, opacity: 0, ease: 'none', scrollTrigger: { trigger: one('footer'), start: 'top 85%', end: 'bottom bottom', scrub: true } });
+  }
+  renderVals() {
+    // PHOTOS: paste each uploaded photo's URL here. Empty = the drawn stand-in figure is shown.
+    // Wardrobe looks need the same model, same pose and same framing so the outfit swap lines up.
+    const IMG = {
+      red: '', indigo: '', sage: '', tissue: '',
+      teal: '', white: '', rust: '', mustard: '', pink: '',
+      turn: [] // 360° turntable frames in order (front → right → back → left), e.g. 24–36 photos
+    };
+    const pic = (key) => { const src = IMG[key] || ''; return { img: src, hasImg: !!src, noImg: !src }; };
+    const O = {
+      red: { base: '#9E2F2A', border: '#D7A23B', motif: '#F3D9A6', motifOp: 0.9, dot: 1.3, dupatta: '#E0B04E', bottom: '#D7A23B' },
+      indigo: { base: '#22305A', border: '#A33A2C', motif: '#E9DCC3', motifOp: 0.75, dot: 1.5, dupatta: '#A33A2C', bottom: '#E9DCC3' },
+      sage: { base: '#E9DFC9', border: '#4F6B4A', motif: '#4F6B4A', motifOp: 0.7, dot: 1.2, dupatta: '#8FA58A', bottom: '#4F6B4A' },
+      tissue: { base: '#C9A55C', border: '#6E2E3E', motif: '#F5E6BF', motifOp: 0.5, dot: 0.9, dupatta: '#6E2E3E', bottom: '#F2E7CF' },
+      teal: { base: '#2F6A5E', border: '#E0B04E', motif: '#F2D49A', motifOp: 0.6, dot: 1.2, dupatta: '#E8A23C', bottom: '#F2E7CF' },
+      white: { base: '#F4F0E6', border: '#C9B79A', motif: '#BFAF92', motifOp: 0.8, dot: 1, dupatta: '#E3BDB3', bottom: '#F4F0E6' },
+      rust: { base: '#A2512F', border: '#2B2A3F', motif: '#EBCB95', motifOp: 0.7, dot: 1.6, dupatta: '#2B2A3F', bottom: '#EBCB95' },
+      mustard: { base: '#D29A2A', border: '#8E2430', motif: '#FFF1D2', motifOp: 0.9, dot: 1.4, dupatta: '#8E2430', bottom: '#8E2430' },
+      pink: { base: '#D98C9A', border: '#C9A458', motif: '#F8E3E6', motifOp: 0.7, dot: 1, dupatta: '#C9A458', bottom: '#F8E3E6' }
+    };
+    const slideData = [
+      { eyebrow: 'The Festive Edit', label: 'Festive edit', l1: 'Draped in', l2: 'colour.', ink: '#9E2F2A', p: 'Bandhani, gota and tissue — ready-made anarkalis and suit sets, finished and ready to wear this season.', cta: 'Shop the edit', arch: '#E8C9B5', o: O.red, caption: 'Gharchola bandhani anarkali' },
+      { eyebrow: 'Everyday Cotton', label: 'Everyday cotton', l1: 'Soft on', l2: 'the skin.', ink: '#4F6B4A', p: 'Hand block-printed cotton kurtas and co-ords, cut from the same fabrics we sell by the metre.', cta: 'Shop cotton', arch: '#D4DCCB', o: O.sage, caption: 'Block-print cotton co-ord' },
+      { eyebrow: 'Wedding Dupattas', label: 'Wedding dupattas', l1: 'The final', l2: 'flourish.', ink: '#6E2E3E', p: 'Tissue, organza and bandhani dupattas with hand-finished tassels, to lift a plain suit into an occasion.', cta: 'Shop dupattas', arch: '#E6D6AE', o: O.tissue, caption: 'Tissue kurti with dupatta' }
+    ];
+    const keyOf = (o) => Object.keys(O).find((k) => O[k] === o);
+    const slides = slideData.map((s, i) => Object.assign({}, s, pic(keyOf(s.o)), {
+      n: '0' + (i + 1), uid: 'h' + i, op: i === 0 ? 1 : 0, vis: i === 0 ? 'visible' : 'hidden', bar: i === 0 ? 0.35 : 0,
+      pick: () => { if (this.goSlide) this.goSlide(i); }
+    }));
+    const lookData = [
+      { title: 'Bandhani anarkali', kind: 'Ready-made', desc: 'Hand tie-dyed bandhani with a gold gota border at the hem and a matching dupatta.', fabric: 'Also sold as fabric, by the metre', arch: '#E8C9B5', tint: '#F3E6DC', o: O.red },
+      { title: 'Ajrakh kurta set', kind: 'Ready-made', desc: 'Indigo and madder ajrakh print on modal silk, with straight pants and a contrast dupatta.', fabric: 'Fabric from ₹420 per metre', arch: '#CBD0DF', tint: '#E9EBF1', o: O.indigo },
+      { title: 'Block-print co-ord', kind: 'Ready-made', desc: 'A relaxed kurta and pant in hand block-printed cotton, made for every day.', fabric: 'Fabric from ₹220 per metre', arch: '#D4DCCB', tint: '#ECEFE6', o: O.sage },
+      { title: 'Tissue kurti & dupatta', kind: 'Ready-made', desc: 'Gold tissue kurti with a wine dupatta, finished with hand-made tassels.', fabric: 'Fabric from ₹450 per metre', arch: '#E6D6AE', tint: '#F3EBD6', o: O.tissue }
+    ];
+    const looks = lookData.map((l, i) => Object.assign({}, l, pic(keyOf(l.o)), {
+      n: '0' + (i + 1), uid: 'w' + i,
+      clip: i === 0 ? 'inset(0% 0% 0% 0%)' : 'inset(0% 0% 100% 0%)',
+      nameOp: i === 0 ? 1 : 0.28, infoOp: i === 0 ? 1 : 0, infoVis: i === 0 ? 'visible' : 'hidden'
+    }));
+    const cats = [
+      { title: 'Fabrics', sub: 'Cotton, crepe, modal silk, chinon and tissue — by the metre', pat: 'p-sage' },
+      { title: 'Ready-made', sub: 'Kurtis, anarkalis and co-ord sets', pat: 'p-indigo' },
+      { title: 'Unstitched suits', sub: 'Three-piece sets to tailor your way', pat: 'p-leaf' },
+      { title: 'Dupattas', sub: 'Bandhani, ajrakh, tissue and organza', pat: 'p-red' },
+      { title: 'Blouses', sub: 'Ready-made blouses and blouse pieces', pat: 'p-gold' },
+      { title: 'Tassels & latkans', sub: 'Finishing for dupattas and blouses', pat: 'p-wine' },
+      { title: 'Laces & borders', sub: 'Gota, zari and embroidered trims', pat: 'p-border' }
+    ].map((c, i) => Object.assign({}, c, { n: '0' + (i + 1) }));
+    const turnBlocks = [
+      { deg: '0°', view: 'Front', title: 'Ajrakh modal kurta set', body: 'Hand block-printed in indigo and madder red on modal silk, with a straight hem and a contrast dupatta.', k1: 'Fabric', v1: 'Modal silk', k2: 'Print', v2: 'Ajrakh block print' },
+      { deg: '90°', view: 'Side', title: 'The fall of the fabric', body: 'Modal silk drapes close without clinging. The side view shows how the kurta moves and where the slits sit.', k1: 'Length', v1: '[KURTA LENGTH]', k2: 'Fit', v2: '[FIT]' },
+      { deg: '180°', view: 'Back', title: 'Dori tie and tassels', body: 'A tie-up back neck finished with hand-made tassels — the same ones you can buy in Tassels & latkans.', k1: 'Closure', v1: 'Dori tie', k2: 'Care', v2: '[CARE]' }
+    ];
+    const card = (o, bg, title, fabric, uid) => Object.assign({ o: o, bg: bg, title: title, fabric: fabric, uid: uid }, pic(keyOf(o)));
+    const turnFrames = (IMG.turn || []).map((src, i) => ({ src: src, op: i === 0 ? 1 : 0, alt: i === 0 ? 'Ajrakh kurta set, turning view' : '' }));
+    const lookCols = [
+      { pad: '0px', cards: [card(O.teal, '#D8E2DA', 'Leheriya suit set', 'Chiffon', 'k1'), card(O.indigo, '#CBD0DF', 'Ajrakh kurta set', 'Modal silk', 'k2'), card(O.pink, '#F0D7D6', 'Gota patti kurti', 'Chinon', 'k3')] },
+      { pad: '120px', cards: [card(O.white, '#E8D8CF', 'Chikankari kurta', 'Cotton', 'k4'), card(O.mustard, '#F0DFBA', 'Bandhani anarkali', 'Georgette', 'k5'), card(O.red, '#E8C9B5', 'Festive suit set', 'Crepe', 'k6')] },
+      { pad: '48px', cards: [card(O.rust, '#EAD8C4', 'Kalamkari kurta', 'Cotton', 'k7'), card(O.sage, '#D4DCCB', 'Block-print co-ord', 'Cotton', 'k8'), card(O.tissue, '#E6D6AE', 'Tissue kurti', 'Tissue', 'k9')] }
+    ];
+    const products = [
+      { title: 'Gharchola bandhani dupatta', price: '₹2,199', unit: 'each', tag: 'New', tagBg: '#1C2B27', pat: 'p-bandhani', sale: false, sw: ['#A33A2C', '#3E5A4F'] },
+      { title: 'Ajrakh print modal silk', price: '₹420', unit: 'per metre', tag: 'New', tagBg: '#1C2B27', pat: 'p-indigo-l', sale: false, sw: ['#3B4A7A', '#A33A2C'] },
+      { title: 'Block print cotton', price: '₹220', unit: 'per metre', tag: 'Sale', tagBg: '#8A5404', pat: 'p-rose', sale: true, was: '₹260', off: '15% off', sw: ['#A33A2C', '#3E5A4F'] },
+      { title: 'Tissue blouse', price: '₹1,299', unit: 'each', tag: 'New', tagBg: '#1C2B27', pat: 'p-tissue', sale: false, sw: ['#B08A3E'] }
+    ];
+    const OFFER_CODE = '[CODE]';
+    const st = this.state || {};
+    const copyCode = () => {
+      try { if (navigator.clipboard) navigator.clipboard.writeText(OFFER_CODE); } catch (e) {}
+      this.setState({ copied: true });
+      clearTimeout(this._copyT);
+      this._copyT = setTimeout(() => this.setState({ copied: false }), 1800);
+    };
+    const tc = (bought, bg) => ({ bought: bought, bg: bg });
+    const tRows = [
+      { pad: 'clamp(16px, 4vw, 56px)', cards: [tc('Ajrakh print modal silk', '#E9EBF1'), tc('Gharchola bandhani dupatta', '#F3E6DC'), tc('Block print cotton', '#ECEFE6'), tc('Tissue blouse', '#F3EBD6')] },
+      { pad: '0px', cards: [tc('Handloom cotton', '#ECEFE6'), tc('Bandhani dupatta', '#F3E6DC'), tc('Mulmul cotton', '#F3EBD6'), tc('Tissue fabric', '#E9EBF1')] }
+    ];
+    // Hamburger menu
+    const menuOpen = !!st.menuOpen;
+    const navData = [
+      { label: 'Fabrics', sub: ['Cotton', 'Crepe', 'Modal silk', 'Chinon', 'Tissue', 'Shop all fabrics'] },
+      { label: 'Dupattas', sub: ['Bandhani', 'Ajrakh', 'Tissue', 'Organza', 'Shop all dupattas'] },
+      { label: 'Blouses' },
+      { label: 'Ready-made', sub: ['Kurtis', 'Anarkalis', 'Co-ord sets', 'Shop all ready-made'] },
+      { label: 'Unstitched suits' },
+      { label: 'New arrivals' },
+      { label: 'Sale', color: '#9A5F05' }
+    ];
+    const navItems = navData.map((n) => {
+      const open = st.openGroup === n.label;
+      return {
+        label: n.label, sub: n.sub || [], hasSub: !!n.sub, noSub: !n.sub, open: open,
+        rot: open ? '45deg' : '0deg', color: n.color || '#1C2B27',
+        toggle: () => this.setState({ openGroup: open ? null : n.label })
+      };
+    });
+    const toggleMenu = () => this.setState({ menuOpen: !menuOpen, openGroup: null });
+    const closeMenu = () => this.setState({ menuOpen: false, openGroup: null });
+    return { navItems: navItems, toggleMenu: toggleMenu, closeMenu: closeMenu,
+      menuOpen: menuOpen, menuClosed: !menuOpen, menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      menuEvents: menuOpen ? 'auto' : 'none', scrimOp: menuOpen ? 1 : 0,
+      drawerX: menuOpen ? '0%' : '-100%', drawerVis: menuOpen ? 'visible' : 'hidden', drawerCls: menuOpen ? 'is-open' : '',
+      copyCode: copyCode, copyLabel: st.copied ? 'Copied' : 'Copy code', tRows: tRows,
+      turnFrames: turnFrames, hasTurnFrames: turnFrames.length > 0, noTurnFrames: turnFrames.length === 0,
+      slides: slides, looks: looks, cats: cats, turnO: O.indigo, turnBlocks: turnBlocks, lookCols: lookCols, products: products };
+  }
+}
+</script>
+</body>
+</html>
